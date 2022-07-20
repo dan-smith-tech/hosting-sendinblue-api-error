@@ -12,7 +12,7 @@ export default async function emailHandler(req, res) {
 	switch (method) {
 		case "POST":
 			try {
-				//#region Sendinlue API
+				//#region Sendinlue API - this doesn't seem to run on the hosting platform
 				let apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 				let sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
 
@@ -33,7 +33,7 @@ export default async function emailHandler(req, res) {
 					});
 				//#endregion
 
-				console.log("yo");
+				console.log("API hit"); // This is logged to the 'Function Logs' console on the hosting platform
 
 				res.status(201).json({ success: true, data: { email } });
 			} catch (err) {
