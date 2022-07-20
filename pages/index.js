@@ -1,3 +1,4 @@
+// pages/index.js
 export default function Home() {
 	function handleSubmit(e) {
 		e.preventDefault();

@@ -1,3 +1,4 @@
+// pages/api/signup.js
 const SibApiV3Sdk = require("sib-api-v3-sdk");
 let defaultClient = SibApiV3Sdk.ApiClient.instance;
 
@@ -31,6 +32,8 @@ export default async function emailHandler(req, res) {
 						console.error(error);
 					});
 				//#endregion
+
+				console.log("yo");
 
 				res.status(201).json({ success: true, data: { email } });
 			} catch (err) {
